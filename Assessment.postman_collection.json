@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "6ddaebb3-c477-4dcc-8ea6-af42e7a2817c",
+		"name": "Assessment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8082/recipe/ingredient?ingredient=Vert",
+			"protocolProfileBehavior": {
+				"strictSSL": false,
+				"followRedirects": false,
+				"disableUrlEncoding": true,
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "type",
+						"value": "Non Veg Biryani",
+						"type": "text"
+					},
+					{
+						"key": "type",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeName\":\"Veg Biryani\",\r\n    \"type\":\"Veg\",\r\n    \"description\":\"hhhhhhhhhhhhhhhhhhhhhhh\",\r\n    \"ingredients\":\"Vert\",\r\n    \"serve\":\"2\",\r\n    \"instructions\":\"Bsahfj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/recipe/ingredient?ingredient=Vert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"recipe",
+						"ingredient"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Veg",
+							"disabled": true
+						},
+						{
+							"key": "ingredient",
+							"value": "Vert"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/recipe/serving?serving=2&ingredient=Vert",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/recipe/serving?serving=2&ingredient=Vert",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"recipe",
+						"serving"
+					],
+					"query": [
+						{
+							"key": "serving",
+							"value": "2"
+						},
+						{
+							"key": "ingredient",
+							"value": "Vert"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/recipe/type?type=Veg",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/recipe/type?type=Veg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"recipe",
+						"type"
+					],
+					"query": [
+						{
+							"key": "type",
+							"value": "Veg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/recipe/update",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeName\":\"Veg Biryani\",\r\n    \"type\":\"Veg\",\r\n    \"description\":\"hhhhhhhhhhhhhhhhhhhhhhh\",\r\n    \"ingredients\":\"Vert\",\r\n    \"serve\":\"2\",\r\n    \"instructions\":\"Bsahfj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/recipe/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"recipe",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/recipe/createRecipe",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"recipeName\":\"Veg Biryani\",\r\n    \"type\":\"Veg\",\r\n    \"description\":\"Fried rice with Vegetables\",\r\n    \"ingredients\":\"Vert\",\r\n    \"serve\":\"2\",\r\n    \"instructions\":\"Bsahfj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/recipe/createRecipe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"recipe",
+						"createRecipe"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

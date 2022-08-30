@@ -1,0 +1,283 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Assessment",
+    "contact": {}
+  },
+  "host": "localhost:8082",
+  "basePath": "/recipe",
+  "securityDefinitions": {},
+  "schemes": [
+    "http"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/ingredient": {
+      "get": {
+        "summary": "http://localhost:8082/recipe/ingredient?ingredient=Vert",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "http://localhost:8082/recipe/ingredient?ingredient=Vert",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ingredient",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "security": []
+      }
+    },
+    "/serving": {
+      "get": {
+        "summary": "http://localhost:8082/recipe/serving?serving=2&ingredient=Vert",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "http://localhost:8082/recipe/serving?serving=2&ingredient=Vert",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "serving",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "description": ""
+          },
+          {
+            "name": "ingredient",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/type": {
+      "get": {
+        "summary": "http://localhost:8082/recipe/type?type=Veg",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "http://localhost:8082/recipe/type?type=Veg",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/update": {
+      "post": {
+        "summary": "http://localhost:8082/recipe/update",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "http://localhost:8082/recipe/update",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/http%3A~1~1localhost%3A8082~1recipe~1updaterequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/createRecipe": {
+      "post": {
+        "summary": "http://localhost:8082/recipe/createRecipe",
+        "tags": [
+          "Misc"
+        ],
+        "operationId": "http://localhost:8082/recipe/createRecipe",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/http%3A~1~1localhost%3A8082~1recipe~1createRecipeRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "http://localhost:8082/recipe/updaterequest": {
+      "title": "http://localhost:8082/recipe/updaterequest",
+      "example": {
+        "recipeName": "Veg Biryani",
+        "type": "Veg",
+        "description": "hhhhhhhhhhhhhhhhhhhhhhh",
+        "ingredients": "Vert",
+        "serve": "2",
+        "instructions": "Bsahfj"
+      },
+      "type": "object",
+      "properties": {
+        "recipeName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "string"
+        },
+        "serve": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipeName",
+        "type",
+        "description",
+        "ingredients",
+        "serve",
+        "instructions"
+      ]
+    },
+    "http://localhost:8082/recipe/createRecipeRequest": {
+      "title": "http://localhost:8082/recipe/createRecipeRequest",
+      "example": {
+        "recipeName": "Veg Biryani",
+        "type": "Veg",
+        "description": "Fried rice with Vegetables",
+        "ingredients": "Vert",
+        "serve": "2",
+        "instructions": "Bsahfj"
+      },
+      "type": "object",
+      "properties": {
+        "recipeName": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "string"
+        },
+        "serve": {
+          "type": "string"
+        },
+        "instructions": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "recipeName",
+        "type",
+        "description",
+        "ingredients",
+        "serve",
+        "instructions"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Misc",
+      "description": ""
+    }
+  ]
+}
