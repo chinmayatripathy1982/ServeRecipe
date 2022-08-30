@@ -2,7 +2,7 @@
 Recipe Managed Api 
 
 
-Objective:
+# Objective:
 RecipeManagedApi allows adding, updating, removing and fetching recipes. Additionally users should be able to filter available recipes based on one or more of the following criteria:
 1. Whether or not the dish is vegetarian
 2. The number of servings
@@ -13,11 +13,11 @@ For example, the API should be able to handle the following search requests:
 • Recipes that can serve 4 persons and have “potatoes” as an ingredient
 • Recipes without “salmon” as an ingredient that has “oven” in the instructions.
 
-Build & SpringBoot run process:
+# Build & SpringBoot run process:
 
-mvn clean install
+    # mvn clean install
 
 Running from command line.
-mvnw spring-boot:run
+    # mvnw spring-boot:run
 
 PostMan collection and swagger definition is uploaded.
